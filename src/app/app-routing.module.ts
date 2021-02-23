@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { JspreadsheetComponent } from './jspreadsheet/jspreadsheet.component';
+import { SpreadjsComponent } from './spreadjs/spreadjs.component';
 
 const routes: Routes = [
-  { path: 'test', component: JspreadsheetComponent }
+  { path: 'jspreadsheet', component: JspreadsheetComponent },
+  { path: 'spreadjs', component: SpreadjsComponent }
 ];
 
 @NgModule({
