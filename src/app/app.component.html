@@ -1,10 +1,21 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <div class='container'>
-    <router-outlet></router-outlet>
-  </div>
-  
+<h1>Grapecity</h1>
 
+<gc-spread-sheets
+[backColor]="spreadBackColor"
+[hostStyle]="hostStyle"
+(workbookInitialized)="workbookInit($event)"
+>
+  <gc-worksheet [name]="sheetName" [dataSource]="data">
+  <gc-column dataField="Name" width="300"></gc-column>
+  <gc-column dataField="Category" [width]="columnWidth"></gc-column>
+  <gc-column
+    datafield="Price"
+    [width]="columnWidth"
+    formatter="$ #.00"
+    ></gc-column>
+    <gc-column dataField="Shopping Place" [width]="columnWidth"></gc-column> 
+    </gc-worksheet>
+  </gc-spread-sheets>
+
+  <h1>JSpreadsheet</h1>
+  <div #spreadsheet></div>

@@ -1,26 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { JspreadsheetComponent } from './jspreadsheet/jspreadsheet.component';
-import { AppRoutingModule } from './/app-routing.module';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { SpreadjsComponent } from './spreadjs/spreadjs.component';
-
 import { SpreadSheetsModule } from "@grapecity/spread-sheets-angular";
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    JspreadsheetComponent,
-    SpreadjsComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     SpreadSheetsModule
   ],
-  providers: [ {provide: LocationStrategy, useClass: HashLocationStrategy} ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
