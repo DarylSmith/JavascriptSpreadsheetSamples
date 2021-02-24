@@ -5,15 +5,12 @@
 [hostStyle]="hostStyle"
 (workbookInitialized)="workbookInit($event)"
 >
-  <gc-worksheet [name]="sheetName" [dataSource]="data">
-  <gc-column dataField="Name" width="300"></gc-column>
-  <gc-column dataField="Category" [width]="columnWidth"></gc-column>
-  <gc-column
-    datafield="Price"
-    [width]="columnWidth"
-    formatter="$ #.00"
-    ></gc-column>
-    <gc-column dataField="Shopping Place" [width]="columnWidth"></gc-column> 
+  <gc-worksheet [name]="sheetName" [dataSource]="SpreadJsData">
+  <gc-column dataField="Day" width="300"></gc-column>
+  <gc-column dataField="Date" width="300"></gc-column>
+  <gc-column dataField="HoursInBed" [width]="SpreadJSWidth"></gc-column>
+  <gc-column dataField="HoursAsleep" [width]="SpreadJSWidth"></gc-column>
+  <gc-column dataField="SleepEfficiency" width="300"></gc-column>
     </gc-worksheet>
   </gc-spread-sheets>
 
