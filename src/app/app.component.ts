@@ -44,7 +44,7 @@ export class AppComponent  implements OnInit, AfterViewInit  {
      
 
       this.JSpreadsheetData.push(
-        [day,'01/01/2021',0,0,`=(D${index}/C${index})*100`]
+        [day,'01/01/2021',0,0,`=(D${index+1}/C${index+1})*100`]
       );
 
 
@@ -78,7 +78,9 @@ export class AppComponent  implements OnInit, AfterViewInit  {
 
     for(let i=0;i<this.daysOfTheWeek.length;i++ ){
     sheet.setStyle(i, 1, style);
-    sheet.setFormula(i,4,`=(D${i+1}/C${i+1})*100`)
+
+    //use IFERROR function to show a 0 if nothing has been entered
+    sheet.setFormula(i,4,`=IFERROR(((D${i+1}/C${i+1})*100),0)`)
     spread.commandManager().execute({ cmd: "openDateTimePicker", row: i, col: 1, sheetName: "Sheet1" });
     }
 
